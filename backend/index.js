@@ -13,7 +13,7 @@ let port = process.env.PORT || 8000;
 
 let app = express();
 
-const _dirname = path.resolve();
+const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
