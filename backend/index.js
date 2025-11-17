@@ -8,9 +8,13 @@ import cors from "cors";
 import userRouter from "./routes/user.route.js";
 import listingRouter from "./routes/listing.route.js";
 import bookingRouter from "./routes/booking.route.js";
+import path from "path";
 let port = process.env.PORT || 8000;
 
 let app = express();
+
+const _dirname = path.resolve();
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(
@@ -24,6 +28,14 @@ app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/listing", listingRouter);
 app.use("/api/booking", bookingRouter);
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+  });
+}
 
 app.listen(port, () => {
   connectDb();

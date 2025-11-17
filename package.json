@@ -1,0 +1,22 @@
+{
+  "name": "atlasone",
+  "version": "1.0.0",
+  "description": "Created by using React.js and Node.js",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tejasvirajput/AtlasOne.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tejasvirajput/AtlasOne/issues"
+  },
+  "homepage": "https://github.com/tejasvirajput/AtlasOne#readme"
+}
