@@ -13,6 +13,8 @@ import MyListing from "./pages/MyListing";
 import ViewCard from "./pages/ViewCard";
 import MyBooking from "./pages/MyBooking";
 import Booked from "./pages/Booked";
+import TripPlanner from "./pages/TripPlanner";
+
 
 function App() {
   let { userData } = useContext(userDataContext);
@@ -24,6 +26,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/trip-planner"
+          element={userData != null ? <TripPlanner /> : <Navigate to={"/"} />}
+        />
         <Route
           path="/listingpage1"
           element={userData != null ? <ListingPage1 /> : <Navigate to={"/"} />}

@@ -47,11 +47,11 @@ function ViewCard() {
       let OutDate = new Date(checkOut);
       let n = (OutDate - inDate) / (24 * 60 * 60 * 1000);
       setNight(n);
-      let airBnbCharge = cardDetails.rent * (7 / 100);
+      let AtlasOneCharge = cardDetails.rent * (7 / 100);
       let tax = cardDetails.rent * (7 / 100);
 
       if (n > 0) {
-        setTotal(cardDetails.rent * n + airBnbCharge + tax);
+        setTotal(cardDetails.rent * n + AtlasOneCharge + tax);
       } else {
         setTotal(0);
       }
