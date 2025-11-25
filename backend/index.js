@@ -8,6 +8,7 @@ import cors from "cors";
 import userRouter from "./routes/user.route.js";
 import listingRouter from "./routes/listing.route.js";
 import bookingRouter from "./routes/booking.route.js";
+import itineraryRouter from "./routes/itinerary.route.js";
 import path from "path";
 let port = process.env.PORT || 8000;
 
@@ -28,6 +29,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/listing", listingRouter);
 app.use("/api/booking", bookingRouter);
+app.use("/api/itinerary", itineraryRouter); //trip planner
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));

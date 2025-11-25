@@ -91,6 +91,12 @@ function Nav() {
           >
             List your home
           </span>
+          <span
+            className="text-[18px] cursor-pointer rounded-[50px] hover:bg-[#ded9d9] px-[8px] py-[5px] hidden md:block"
+            onClick={() => navigate("/trip-planner")}
+          >
+           Your Trip Planner
+          </span>
           <button
             className="px-[20px] py-[10px] flex items-center justify-center gap-[5px] border-[1px] border-[#8d8c8c] rounded-[50px] hover:shadow-lg"
             onClick={() => setShowpopup((prev) => !prev)}
